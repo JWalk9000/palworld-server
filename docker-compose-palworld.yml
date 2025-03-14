@@ -3,9 +3,9 @@ services:
     image: jwalk9000/palworld-server:test
     container_name: palworld
     ports:
-      - "8211:8211"
+      - "8211:8211/udp"
     environment:
-      - SERVER_ARGS="-port=8211-players=32 -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS -NumberOfWorkerThreadsServer=4"
+      - SERVER_ARGS="-players=32 -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS -NumberOfWorkerThreadsServer=4"
     volumes:
       - "./Saved:/home/steam/palworld/Pal/Saved"
     restart: unless-stopped
